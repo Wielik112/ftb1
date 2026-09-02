@@ -47,12 +47,13 @@
     <aside class="filters">
       <div class="filter-group">
         <h4>Kategorie</h4>
-        <label class="filter-opt"><input type="radio" name="cat" checked> Wszystkie <span class="count">12</span></label>
-        <label class="filter-opt"><input type="radio" name="cat"> Obuwie <span class="count">2</span></label>
-        <label class="filter-opt"><input type="radio" name="cat"> Bluzy <span class="count">2</span></label>
-        <label class="filter-opt"><input type="radio" name="cat"> Koszulki <span class="count">2</span></label>
-        <label class="filter-opt"><input type="radio" name="cat"> Spodnie <span class="count">3</span></label>
-        <label class="filter-opt"><input type="radio" name="cat"> Akcesoria <span class="count">2</span></label>
+        <label class="filter-opt"><input type="radio" name="cat" value="Wszystkie" checked> Wszystkie <span class="count" data-count-cat="Wszystkie">12</span></label>
+        <label class="filter-opt"><input type="radio" name="cat" value="Obuwie"> Obuwie <span class="count" data-count-cat="Obuwie">2</span></label>
+        <label class="filter-opt"><input type="radio" name="cat" value="Bluzy"> Bluzy <span class="count" data-count-cat="Bluzy">2</span></label>
+        <label class="filter-opt"><input type="radio" name="cat" value="Koszulki"> Koszulki <span class="count" data-count-cat="Koszulki">2</span></label>
+        <label class="filter-opt"><input type="radio" name="cat" value="Spodnie"> Spodnie <span class="count" data-count-cat="Spodnie">3</span></label>
+        <label class="filter-opt"><input type="radio" name="cat" value="Akcesoria"> Akcesoria <span class="count" data-count-cat="Akcesoria">2</span></label>
+        <label class="filter-opt"><input type="radio" name="cat" value="Kurtki"> Kurtki <span class="count" data-count-cat="Kurtki">1</span></label>
       </div>
       <div class="filter-group">
         <h4>Marka</h4>
@@ -69,21 +70,21 @@
       <div class="filter-group">
         <h4>Rozmiar</h4>
         <div class="chip-row">
-          <span class="chip">XS</span><span class="chip">S</span><span class="chip">M</span>
-          <span class="chip">L</span><span class="chip">XL</span><span class="chip">XXL</span>
+          <span class="chip" data-size="XS">XS</span><span class="chip" data-size="S">S</span><span class="chip" data-size="M">M</span>
+          <span class="chip" data-size="L">L</span><span class="chip" data-size="XL">XL</span><span class="chip" data-size="XXL">XXL</span>
         </div>
       </div>
       <div class="filter-group">
         <h4>Cena</h4>
-        <label class="filter-opt"><input type="checkbox"> do 100 zł <span class="count">2</span></label>
-        <label class="filter-opt"><input type="checkbox"> 100–200 zł <span class="count">4</span></label>
-        <label class="filter-opt"><input type="checkbox"> 200–350 zł <span class="count">4</span></label>
-        <label class="filter-opt"><input type="checkbox"> powyżej 350 zł <span class="count">2</span></label>
+        <label class="filter-opt"><input type="checkbox" data-min="0" data-max="100"> do 100 zł</label>
+        <label class="filter-opt"><input type="checkbox" data-min="100" data-max="200"> 100–200 zł</label>
+        <label class="filter-opt"><input type="checkbox" data-min="200" data-max="350"> 200–350 zł</label>
+        <label class="filter-opt"><input type="checkbox" data-min="350" data-max="999999"> powyżej 350 zł</label>
       </div>
       <div class="filter-group">
         <h4>Kolor</h4>
         <div class="chip-row">
-          <span class="chip">Czarny</span><span class="chip">Czerwony</span><span class="chip">Biały</span><span class="chip">Szary</span>
+          <span class="chip" data-color="Czarny">Czarny</span><span class="chip" data-color="Czerwony">Czerwony</span><span class="chip" data-color="Biały">Biały</span><span class="chip" data-color="Szary">Szary</span>
         </div>
       </div>
     </aside>
@@ -102,6 +103,7 @@
             <span class="chip" data-cat="Bluzy">Bluzy</span>
             <span class="chip" data-cat="Koszulki">Koszulki</span>
             <span class="chip" data-cat="Spodnie">Spodnie</span>
+            <span class="chip" data-cat="Kurtki">Kurtki</span>
             <span class="chip" data-cat="Akcesoria">Akcesoria</span>
           </div>
           <div class="select-wrap">
@@ -121,6 +123,7 @@
         <span class="chip" data-cat="Bluzy">Bluzy</span>
         <span class="chip" data-cat="Koszulki">Koszulki</span>
         <span class="chip" data-cat="Spodnie">Spodnie</span>
+        <span class="chip" data-cat="Kurtki">Kurtki</span>
         <span class="chip" data-cat="Akcesoria">Akcesoria</span>
       </div>
 

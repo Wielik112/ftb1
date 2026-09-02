@@ -3,21 +3,24 @@
    ============================================ */
 
 const PRODUCTS = [
-  { id: 'p01', name: 'Velocity Pro Tee', cat: 'Koszulki', brand: 'Nike', price: 89, old: 149, tag: '-40%', tagType: 'sale', stars: 5, gradient: 'linear-gradient(135deg,#2a0409,#1c1c22)' },
-  { id: 'p02', name: 'Apex Track Jacket', cat: 'Bluzy', brand: 'Adidas', price: 259, old: 399, tag: 'HIT', tagType: 'hit', stars: 5, gradient: 'linear-gradient(135deg,#1c1c22,#320810)' },
-  { id: 'p03', name: 'Redline Joggers', cat: 'Spodnie', brand: 'Puma', price: 179, old: 249, tag: '-28%', tagType: 'sale', stars: 4, gradient: 'linear-gradient(135deg,#151519,#2a0409)' },
-  { id: 'p04', name: 'Surge Windbreaker', cat: 'Kurtki', brand: 'Under Armour', price: 329, old: 449, tag: 'NOWOŚĆ', tagType: 'new', stars: 5, gradient: 'linear-gradient(135deg,#2a0409,#0f0f12)' },
-  { id: 'p05', name: 'Boost Runner GT', cat: 'Obuwie', brand: 'Adidas', price: 419, old: 599, tag: '-30%', tagType: 'sale', stars: 5, gradient: 'linear-gradient(135deg,#1c1c22,#2a0409)' },
-  { id: 'p06', name: 'Torque Cap', cat: 'Akcesoria', brand: 'New Balance', price: 69, old: 99, tag: 'HIT', tagType: 'hit', stars: 4, gradient: 'linear-gradient(135deg,#320810,#151519)' },
-  { id: 'p07', name: 'Nitro Compression', cat: 'Koszulki', brand: 'Under Armour', price: 119, old: 169, tag: '-29%', tagType: 'sale', stars: 5, gradient: 'linear-gradient(135deg,#0f0f12,#2a0409)' },
-  { id: 'p08', name: 'Drift Cargo Pants', cat: 'Spodnie', brand: 'Puma', price: 219, old: 299, tag: 'NOWOŚĆ', tagType: 'new', stars: 4, gradient: 'linear-gradient(135deg,#2a0409,#1c1c22)' },
-  { id: 'p09', name: 'Ignite Hoodie', cat: 'Bluzy', brand: 'Nike', price: 199, old: 279, tag: '-28%', tagType: 'sale', stars: 5, gradient: 'linear-gradient(135deg,#1c1c22,#320810)' },
-  { id: 'p10', name: 'Sprint Shorts 2.0', cat: 'Spodnie', brand: 'Reebok', price: 99, old: 139, tag: 'HIT', tagType: 'hit', stars: 4, gradient: 'linear-gradient(135deg,#151519,#2a0409)' },
-  { id: 'p11', name: 'Carbon Duffel Bag', cat: 'Akcesoria', brand: 'Nike', price: 289, old: 399, tag: '-27%', tagType: 'sale', stars: 5, gradient: 'linear-gradient(135deg,#2a0409,#0f0f12)' },
-  { id: 'p12', name: 'Phantom Trail Shoe', cat: 'Obuwie', brand: 'New Balance', price: 379, old: 529, tag: 'NOWOŚĆ', tagType: 'new', stars: 5, gradient: 'linear-gradient(135deg,#1c1c22,#2a0409)' },
+  { id: 'p01', name: 'Velocity Pro Tee', cat: 'Koszulki', brand: 'Nike', price: 89, old: 149, tag: '-40%', tagType: 'sale', stars: 5, reviews: 96, color: 'Czarny', sizes: ['S','M','L','XL'], material: '92% poliester, 8% elastan', gradient: 'linear-gradient(135deg,#2a0409,#1c1c22)', desc: 'Lekka koszulka treningowa z oddychającej dzianiny, która odprowadza wilgoć i szybko schnie. Płaskie szwy nie ocierają, a smukły krój zapewnia pełną swobodę ruchu.' },
+  { id: 'p02', name: 'Apex Track Jacket', cat: 'Bluzy', brand: 'Adidas', price: 259, old: 399, tag: 'HIT', tagType: 'hit', stars: 5, reviews: 128, color: 'Czerwony', sizes: ['M','L','XL','XXL'], material: '88% poliester, 12% elastan', gradient: 'linear-gradient(135deg,#1c1c22,#320810)', desc: 'Techniczna bluza rozpinana zaprojektowana na intensywny wysiłek. Czterokierunkowo elastyczna tkanina odprowadza wilgoć, a detale odblaskowe zwiększają widoczność podczas wieczornych treningów.' },
+  { id: 'p03', name: 'Redline Joggers', cat: 'Spodnie', brand: 'Puma', price: 179, old: 249, tag: '-28%', tagType: 'sale', stars: 4, reviews: 74, color: 'Czarny', sizes: ['S','M','L','XL'], material: '80% bawełna, 20% poliester', gradient: 'linear-gradient(135deg,#151519,#2a0409)', desc: 'Wygodne joggery o zwężanym kroju z miękkiej, drapanej dzianiny. Ściągacze przy kostkach i regulowany ściągacz w pasie trzymają fason przez cały dzień.' },
+  { id: 'p04', name: 'Surge Windbreaker', cat: 'Kurtki', brand: 'Under Armour', price: 329, old: 449, tag: 'NOWOŚĆ', tagType: 'new', stars: 5, reviews: 41, color: 'Szary', sizes: ['M','L','XL'], material: '100% poliamid', gradient: 'linear-gradient(135deg,#2a0409,#0f0f12)', desc: 'Ultralekka wiatrówka, która chroni przed wiatrem i przelotnym deszczem. Składa się do własnej kieszeni — łatwo zabierzesz ją na każdy bieg.' },
+  { id: 'p05', name: 'Boost Runner GT', cat: 'Obuwie', brand: 'Adidas', price: 419, old: 599, tag: '-30%', tagType: 'sale', stars: 5, reviews: 152, color: 'Biały', sizes: ['M','L','XL','XXL'], material: 'Cholewka z siatki, podeszwa EVA', gradient: 'linear-gradient(135deg,#1c1c22,#2a0409)', desc: 'Buty do biegania z responsywną, sprężystą podeszwą, która zwraca energię przy każdym kroku. Przewiewna cholewka i stabilna pięta na długie dystanse.' },
+  { id: 'p06', name: 'Torque Cap', cat: 'Akcesoria', brand: 'New Balance', price: 69, old: 99, tag: 'HIT', tagType: 'hit', stars: 4, reviews: 58, color: 'Czarny', sizes: ['S','M','L'], material: '100% bawełna', gradient: 'linear-gradient(135deg,#320810,#151519)', desc: 'Klasyczna czapka z regulowanym zapięciem i haftowanym logo. Lekka, oddychająca i idealna na trening w słońcu.' },
+  { id: 'p07', name: 'Nitro Compression', cat: 'Koszulki', brand: 'Under Armour', price: 119, old: 169, tag: '-29%', tagType: 'sale', stars: 5, reviews: 87, color: 'Czerwony', sizes: ['XS','S','M','L'], material: '84% poliamid, 16% elastan', gradient: 'linear-gradient(135deg,#0f0f12,#2a0409)', desc: 'Koszulka kompresyjna, która wspiera mięśnie i przyspiesza regenerację. Ściśle przylega do ciała, nie ograniczając ruchu.' },
+  { id: 'p08', name: 'Drift Cargo Pants', cat: 'Spodnie', brand: 'Puma', price: 219, old: 299, tag: 'NOWOŚĆ', tagType: 'new', stars: 4, reviews: 33, color: 'Szary', sizes: ['M','L','XL','XXL'], material: '65% bawełna, 35% poliester', gradient: 'linear-gradient(135deg,#2a0409,#1c1c22)', desc: 'Miejskie spodnie bojówki z praktycznymi kieszeniami cargo i luźnym, nowoczesnym krojem. Trwały materiał sprawdzi się na co dzień i w podróży.' },
+  { id: 'p09', name: 'Ignite Hoodie', cat: 'Bluzy', brand: 'Nike', price: 199, old: 279, tag: '-28%', tagType: 'sale', stars: 5, reviews: 111, color: 'Czarny', sizes: ['S','M','L','XL','XXL'], material: '80% bawełna, 20% poliester', gradient: 'linear-gradient(135deg,#1c1c22,#320810)', desc: 'Ciepła bluza z kapturem z grubej, przyjemnej w dotyku dzianiny. Kangurowa kieszeń i podwójny kaptur dają komfort w chłodniejsze dni.' },
+  { id: 'p10', name: 'Sprint Shorts 2.0', cat: 'Spodnie', brand: 'Reebok', price: 99, old: 139, tag: 'HIT', tagType: 'hit', stars: 4, reviews: 62, color: 'Biały', sizes: ['XS','S','M','L'], material: '100% poliester', gradient: 'linear-gradient(135deg,#151519,#2a0409)', desc: 'Lekkie spodenki do biegania z wszytą siateczką i kieszonką na klucz. Szybko schną i nie krępują ruchów na najszybszych odcinkach.' },
+  { id: 'p11', name: 'Carbon Duffel Bag', cat: 'Akcesoria', brand: 'Nike', price: 289, old: 399, tag: '-27%', tagType: 'sale', stars: 5, reviews: 45, color: 'Czarny', sizes: ['M'], material: '100% poliester 600D', gradient: 'linear-gradient(135deg,#2a0409,#0f0f12)', desc: 'Pojemna torba treningowa z osobną komorą na buty i wzmacnianym dnem. Wygodne uchwyty i regulowany pasek na ramię ułatwiają noszenie.' },
+  { id: 'p12', name: 'Phantom Trail Shoe', cat: 'Obuwie', brand: 'New Balance', price: 379, old: 529, tag: 'NOWOŚĆ', tagType: 'new', stars: 5, reviews: 39, color: 'Szary', sizes: ['M','L','XL'], material: 'Cholewka z siatki, bieżnik gumowy', gradient: 'linear-gradient(135deg,#1c1c22,#2a0409)', desc: 'Buty trailowe z agresywnym bieżnikiem, który trzyma się każdego podłoża. Wzmocniony nosek chroni stopę na wymagających trasach.' },
 ];
 
 const BRANDS = ['Nike', 'Adidas', 'Puma', 'Reebok', 'New Balance', 'Under Armour'];
+
+function getProduct(id) { return PRODUCTS.find(p => p.id === id); }
+function getParam(name) { return new URLSearchParams(location.search).get(name); }
 
 function starStr(n) { return '★★★★★'.slice(0, n) + '☆☆☆☆☆'.slice(0, 5 - n); }
 
@@ -32,11 +35,11 @@ function productCard(p) {
       <button class="product-fav" aria-label="Dodaj do ulubionych">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
       </button>
-      <a href="product.html" class="product-quick" data-add="${p.id}" data-name="${p.name}" data-price="${p.price}">Szybki podgląd</a>
+      <a href="product.html?id=${p.id}" class="product-quick">Szybki podgląd</a>
     </div>
     <div class="product-info">
       <div class="product-cat">${p.brand ? p.brand + ' · ' : ''}${p.cat}</div>
-      <h3 class="product-name"><a href="product.html">${p.name}</a></h3>
+      <h3 class="product-name"><a href="product.html?id=${p.id}">${p.name}</a></h3>
       <div class="product-foot">
         <div class="product-price">${p.price} zł <span class="old">${p.old} zł</span></div>
         <div class="product-stars">${starStr(p.stars)}</div>
@@ -60,55 +63,136 @@ function renderProducts(selector, list) {
   });
 }
 
-// Homepage featured (first 8)
-renderProducts('#featured-products', PRODUCTS.slice(0, 8));
+/* ---------- Product detail page (product.html?id=pXX) ---------- */
+function renderProductDetail(id) {
+  const p = getProduct(id) || PRODUCTS[0];
+  const set = (sel, val) => { const el = document.querySelector(sel); if (el) el.textContent = val; };
 
-// Shop page (all) + filtering
+  document.title = `${p.name} — FBT Outlet`;
+  set('#pd-crumb', p.name);
+  set('#pd-title', p.name);
+  set('#pd-tag', p.tag);
+  set('#pd-stars', starStr(p.stars));
+  set('#pd-reviews', `${p.stars}.0 (${p.reviews} opinii)`);
+  set('#pd-now', `${p.price} zł`);
+  set('#pd-was', `${p.old} zł`);
+  set('#pd-save', `Oszczędzasz ${p.old - p.price} zł`);
+  set('#pd-desc', p.desc);
+  set('#pd-code', `FBT-${p.id.toUpperCase()}-2026`);
+  set('#pd-material', p.material);
+  set('#pd-brand', p.brand);
+
+  const tagEl = document.querySelector('#pd-tag');
+  if (tagEl) tagEl.className = 'tag' + (p.tagType === 'sale' ? '' : ' grey');
+
+  const mainImg = document.getElementById('pd-main-img');
+  if (mainImg) mainImg.style.background = p.gradient;
+  const logo = document.getElementById('pd-main-logo');
+  if (logo) logo.alt = p.name;
+
+  // sizes (first available selected by default)
+  const sizesEl = document.getElementById('pd-sizes');
+  if (sizesEl) {
+    sizesEl.innerHTML = p.sizes.map((s, i) => `<span class="pd-size${i === 0 ? ' active' : ''}">${s}</span>`).join('');
+    sizesEl.querySelectorAll('.pd-size').forEach(s => s.addEventListener('click', () => {
+      sizesEl.querySelectorAll('.pd-size').forEach(x => x.classList.remove('active'));
+      s.classList.add('active');
+    }));
+  }
+
+  // add-to-cart data (handler is bound in main.js, reads these at click time)
+  const addBtn = document.getElementById('pd-add');
+  if (addBtn) { addBtn.dataset.add = p.id; addBtn.dataset.name = p.name; addBtn.dataset.price = p.price; }
+
+  // related products (exclude current)
+  renderProducts('#featured-products', PRODUCTS.filter(x => x.id !== p.id).slice(0, 4));
+}
+
+if (document.getElementById('pd-title')) {
+  renderProductDetail(getParam('id'));
+} else {
+  // Homepage featured (first 8)
+  renderProducts('#featured-products', PRODUCTS.slice(0, 8));
+}
+
+/* ---------- Shop page: category / brand / size / price / color filters ---------- */
 const shopGrid = '#shop-products';
 if (document.querySelector(shopGrid)) {
-  let active = 'Wszystkie';   // category
-  let brand = 'Wszystkie';    // brand
-  let sort = 'default';
+  const state = { cat: 'Wszystkie', brand: 'Wszystkie', sizes: [], colors: [], ranges: [], sort: 'default' };
 
-  // filtered list according to current category + brand
-  const filtered = () => PRODUCTS.filter(p =>
-    (active === 'Wszystkie' || p.cat === active) &&
-    (brand === 'Wszystkie' || p.brand === brand)
-  );
+  const matches = (p) =>
+    (state.cat === 'Wszystkie' || p.cat === state.cat) &&
+    (state.brand === 'Wszystkie' || p.brand === state.brand) &&
+    (state.sizes.length === 0 || p.sizes.some(s => state.sizes.includes(s))) &&
+    (state.colors.length === 0 || state.colors.includes(p.color)) &&
+    (state.ranges.length === 0 || state.ranges.some(r => p.price >= r.min && p.price < r.max));
 
   const draw = () => {
-    let list = filtered();
-    if (sort === 'low') list = [...list].sort((a, b) => a.price - b.price);
-    if (sort === 'high') list = [...list].sort((a, b) => b.price - a.price);
+    let list = PRODUCTS.filter(matches);
+    if (state.sort === 'low') list = [...list].sort((a, b) => a.price - b.price);
+    if (state.sort === 'high') list = [...list].sort((a, b) => b.price - a.price);
     renderProducts(shopGrid, list);
     const ct = document.querySelector('.count-txt strong');
     if (ct) ct.textContent = list.length;
   };
-  draw();
 
-  // category chips
-  document.querySelectorAll('.chip[data-cat]').forEach(chip => {
-    chip.addEventListener('click', () => {
-      document.querySelectorAll('.chip[data-cat]').forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      active = chip.dataset.cat;
-      draw();
-    });
-  });
+  // keep category chip rows + sidebar radios in sync
+  const setCategory = (cat) => {
+    state.cat = cat;
+    document.querySelectorAll('.chip[data-cat]').forEach(c => c.classList.toggle('active', c.dataset.cat === cat));
+    document.querySelectorAll('input[name="cat"]').forEach(r => { r.checked = r.value === cat; });
+    draw();
+  };
 
-  // brand chips
-  document.querySelectorAll('.chip[data-brand]').forEach(chip => {
+  document.querySelectorAll('.chip[data-cat]').forEach(chip =>
+    chip.addEventListener('click', () => setCategory(chip.dataset.cat)));
+  document.querySelectorAll('input[name="cat"]').forEach(radio =>
+    radio.addEventListener('change', () => setCategory(radio.value)));
+
+  // brand chips (single select)
+  document.querySelectorAll('.chip[data-brand]').forEach(chip =>
     chip.addEventListener('click', () => {
       document.querySelectorAll('.chip[data-brand]').forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
-      brand = chip.dataset.brand;
+      state.brand = chip.dataset.brand;
       draw();
-    });
-  });
+    }));
+
+  // size chips (multi select)
+  document.querySelectorAll('.chip[data-size]').forEach(chip =>
+    chip.addEventListener('click', () => {
+      chip.classList.toggle('active');
+      state.sizes = [...document.querySelectorAll('.chip[data-size].active')].map(c => c.dataset.size);
+      draw();
+    }));
+
+  // color chips (multi select)
+  document.querySelectorAll('.chip[data-color]').forEach(chip =>
+    chip.addEventListener('click', () => {
+      chip.classList.toggle('active');
+      state.colors = [...document.querySelectorAll('.chip[data-color].active')].map(c => c.dataset.color);
+      draw();
+    }));
+
+  // price checkboxes (multi select)
+  document.querySelectorAll('input[type="checkbox"][data-min]').forEach(cb =>
+    cb.addEventListener('change', () => {
+      state.ranges = [...document.querySelectorAll('input[type="checkbox"][data-min]:checked')]
+        .map(c => ({ min: +c.dataset.min, max: +c.dataset.max }));
+      draw();
+    }));
 
   // sort
   document.querySelector('#sort')?.addEventListener('change', (e) => {
-    sort = e.target.value;
+    state.sort = e.target.value;
     draw();
   });
+
+  // dynamic category counts in sidebar
+  document.querySelectorAll('[data-count-cat]').forEach(el => {
+    const cat = el.dataset.countCat;
+    el.textContent = cat === 'Wszystkie' ? PRODUCTS.length : PRODUCTS.filter(p => p.cat === cat).length;
+  });
+
+  draw();
 }
