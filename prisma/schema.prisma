@@ -1,0 +1,35 @@
+// Prisma schema for FBT Outlet
+// Database: PostgreSQL (e.g. Neon / Supabase free tier)
+// Set DATABASE_URL in .env, then: npx prisma db push && npm run db:seed
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id        String   @id @default(cuid())
+  name      String
+  cat       String
+  brand     String   @default("")
+  // Stan produktu: "Nowy" lub "Używany"
+  condition String   @default("Nowy")
+  price     Int
+  old       Int      @default(0)
+  tag       String   @default("")
+  // "sale" | "hit" | "new"
+  tagType   String   @default("new")
+  stars     Int      @default(5)
+  reviews   Int      @default(0)
+  color     String   @default("")
+  sizes     String[]
+  material  String   @default("")
+  gradient  String   @default("linear-gradient(135deg,#1c1c22,#2a0409)")
+  desc      String   @default("")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
