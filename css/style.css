@@ -1,5 +1,5 @@
 /* ============================================
-   FBT OUTLET — Design System
+   FBT OUTLET - Design System
    ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
@@ -13,7 +13,7 @@
   --line: #26262E;
   --line-bright: #34343E;
 
-  /* Red — the brand fuel */
+  /* Red - the brand fuel */
   --red: #E01020;
   --red-hot: #FF1E2D;
   --red-deep: #8B0812;
@@ -240,6 +240,8 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 800; line-height: 0.9
   clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
 }
 .tag.grey { background: var(--surface-2); color: var(--grey-1); }
+.tag.cond.new { background: #1f7a3d; color: #fff; }
+.tag.cond.used { background: #b45309; color: #fff; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
