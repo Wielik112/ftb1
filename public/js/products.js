@@ -2,7 +2,10 @@
    FBT OUTLET - Product catalog + card renderer
    ============================================ */
 
-const PRODUCTS = [
+/* FALLBACK_PRODUCTS is used when the backend API is unavailable (e.g. the
+   database is not configured yet), so the storefront always renders. When the
+   API responds, these are replaced by the live catalogue from the database. */
+let PRODUCTS = [
   { id: 'p01', condition: 'Nowy', name: 'Velocity Pro Tee', cat: 'Koszulki', brand: 'Nike', price: 89, old: 149, tag: '-40%', tagType: 'sale', stars: 5, reviews: 96, color: 'Czarny', sizes: ['S','M','L','XL'], material: '92% poliester, 8% elastan', gradient: 'linear-gradient(135deg,#2a0409,#1c1c22)', desc: 'Lekka koszulka treningowa z oddychającej dzianiny, która odprowadza wilgoć i szybko schnie. Płaskie szwy nie ocierają, a smukły krój zapewnia pełną swobodę ruchu.' },
   { id: 'p02', condition: 'Używany', name: 'Apex Track Jacket', cat: 'Bluzy', brand: 'Adidas', price: 259, old: 399, tag: 'HIT', tagType: 'hit', stars: 5, reviews: 128, color: 'Czerwony', sizes: ['M','L','XL','XXL'], material: '88% poliester, 12% elastan', gradient: 'linear-gradient(135deg,#1c1c22,#320810)', desc: 'Techniczna bluza rozpinana zaprojektowana na intensywny wysiłek. Czterokierunkowo elastyczna tkanina odprowadza wilgoć, a detale odblaskowe zwiększają widoczność podczas wieczornych treningów.' },
   { id: 'p03', condition: 'Nowy', name: 'Redline Joggers', cat: 'Spodnie', brand: 'Puma', price: 179, old: 249, tag: '-28%', tagType: 'sale', stars: 4, reviews: 74, color: 'Czarny', sizes: ['S','M','L','XL'], material: '80% bawełna, 20% poliester', gradient: 'linear-gradient(135deg,#151519,#2a0409)', desc: 'Wygodne joggery o zwężanym kroju z miękkiej, drapanej dzianiny. Ściągacze przy kostkach i regulowany ściągacz w pasie trzymają fason przez cały dzień.' },
@@ -110,6 +113,7 @@ function renderProductDetail(id) {
   renderProducts('#featured-products', PRODUCTS.filter(x => x.id !== p.id).slice(0, 4));
 }
 
+function initPage() {
 if (document.getElementById('pd-title')) {
   renderProductDetail(getParam('id'));
 } else {
@@ -212,3 +216,16 @@ if (document.querySelector(shopGrid)) {
 
   draw();
 }
+}
+
+/* Load the live catalogue from the backend, then render the page. Falls back
+   to the bundled FALLBACK data above when the API or database is unavailable. */
+fetch('/api/products', { cache: 'no-store' })
+  .then(r => (r.ok ? r.json() : null))
+  .then(data => {
+    if (Array.isArray(data) && data.length) {
+      PRODUCTS = data.map(p => ({ ...p, sizes: Array.isArray(p.sizes) ? p.sizes : [] }));
+    }
+  })
+  .catch(() => { /* keep fallback catalogue */ })
+  .finally(() => { initPage(); });
