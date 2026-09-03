@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Koszyk — FBT Outlet</title>
+<title>Koszyk - FBT Outlet</title>
 <meta name="description" content="Twój koszyk w FBT Outlet. Sprawdź produkty, zastosuj kod rabatowy i przejdź do bezpiecznej płatności.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +43,7 @@
       <div id="cart-items"></div>
       <div id="cart-empty" style="display:none;padding:60px 0;text-align:center">
         <h3 class="h-card" style="margin-bottom:16px;color:var(--grey-2)">Koszyk jest pusty</h3>
-        <p class="text-grey" style="margin-bottom:28px">Czas rozpędzić zakupy — wybierz coś z naszej kolekcji.</p>
+        <p class="text-grey" style="margin-bottom:28px">Czas rozpędzić zakupy - wybierz coś z naszej kolekcji.</p>
         <a href="shop.html" class="btn btn-primary">Przejdź do sklepu
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -88,7 +88,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 FBT Outlet. Wszelkie prawa zastrzeżone.</span>
-      <span>Projekt & realizacja — <a href="#">FBT Studio</a></span>
+      <span>Projekt & realizacja - <a href="#">FBT Studio</a></span>
     </div>
   </div>
 </footer>
@@ -163,13 +163,13 @@ function removeItem(i) {
   cart.splice(i, 1);
   saveCart(cart);
   renderCart();
-  showToast(name + ' — usunięto z koszyka');
+  showToast(name + ' - usunięto z koszyka');
 }
 
 document.getElementById('promo-btn').addEventListener('click', () => {
   const code = document.getElementById('promo-input').value.trim().toUpperCase();
-  if (code === 'FBT15') { discount = 0.15; showToast('Kod FBT15 aktywny — -15%'); }
-  else if (code === 'START10') { discount = 0.10; showToast('Kod START10 aktywny — -10%'); }
+  if (code === 'FBT15') { discount = 0.15; showToast('Kod FBT15 aktywny - -15%'); }
+  else if (code === 'START10') { discount = 0.10; showToast('Kod START10 aktywny - -10%'); }
   else { discount = 0; showToast('Nieprawidłowy kod rabatowy'); }
   renderCart();
 });

@@ -1,5 +1,5 @@
 /* ============================================
-   FBT OUTLET — Interactions
+   FBT OUTLET - Interactions
    ============================================ */
 
 /* ---------- Nav scroll state ---------- */
@@ -62,7 +62,7 @@ function addToCart(product) {
   if (existing) existing.qty += product.qty || 1;
   else cart.push({ ...product, qty: product.qty || 1 });
   saveCart(cart);
-  showToast(`${product.name} — dodano do koszyka`);
+  showToast(`${product.name} - dodano do koszyka`);
 }
 
 /* ---------- Toast ---------- */
@@ -150,7 +150,7 @@ document.querySelector('.filter-toggle')?.addEventListener('click', () => {
 document.querySelectorAll('form[data-demo]').forEach(form => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    showToast(form.dataset.demo || 'Wysłano — dziękujemy!');
+    showToast(form.dataset.demo || 'Wysłano - dziękujemy!');
     form.reset();
   });
 });
